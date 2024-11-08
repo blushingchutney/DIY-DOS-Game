@@ -43,6 +43,26 @@ CWSDPMI.EXE
 
 Put all the lua522b.zip files in $HOME/Documents/dosbox/y/lua522b/
 
-## ???. Compile example
+## 5. Allegro
+
+Put all the files from 20190618_DJGPP_dir_allegro423installed.zip in $HOME/Documents/dosbox/y/
+
+By the way, you need to use some command to name the uppercase files to lowercase files of include and lib
+
+Linux example:
+
+```
+#!/bin/bash
+
+tree -fi --noreport | while read path; do
+    new_path=$(echo "$path" | tr '[:upper:]' '[:lower:]')
+    
+    if [[ "$path" != "$new_path" ]]; then
+        mv "$path" "$new_path"
+    fi
+done
+```
+
+## 6. Compile example
 
 Just run "make all run"

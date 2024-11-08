@@ -1,10 +1,11 @@
 CC	=	i586-pc-msdosdjgpp-gcc
 CFLAGS	=	\
-	-g -Wall -std=c89	\
-	-I$$HOME/Documents/dosbox/y/lua522b/include
+	-I$$HOME/Documents/dosbox/y/lua522b/include	\
+	-I$$HOME/Documents/dosbox/y/DJGPP/ALLEGRO/INCLUDE
 LDFLAGS	=	\
-	-L$$HOME/Documents/dosbox/y/lua522b/lib
-LIBS	=	-llua
+	-L$$HOME/Documents/dosbox/y/lua522b/lib	\
+	-L$$HOME/Documents/dosbox/y/DJGPP/ALLEGRO/LIB/DJGPP
+LIBS	=	-llua -lalleg
 EXE	=	main.exe
 OBJS	=	main.o
 
