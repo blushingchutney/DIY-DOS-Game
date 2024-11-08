@@ -1,5 +1,10 @@
 CC	=	i586-pc-msdosdjgpp-gcc
-CFLAGS	=	-g -Wall -Werror -std=c89
+CFLAGS	=	\
+	-g -Wall -std=c89	\
+	-I$$HOME/Documents/dosbox/y/lua522b/include
+LDFLAGS	=	\
+	-L$$HOME/Documents/dosbox/y/lua522b/lib
+LIBS	=	-llua
 EXE	=	main.exe
 OBJS	=	main.o
 
@@ -12,7 +17,7 @@ run:
 	dosbox $(EXE)
 
 $(EXE):	$(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(EXE)
+	$(CC) $(CFLAGS) $(LDFLAGS) $(OBJS) -o $(EXE) $(LIBS)
 
 %.o:	%.c
 	$(CC) $(CFLAGS) -c -o $@ $<

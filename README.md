@@ -18,7 +18,7 @@ Once build-djgpp is downloaded, place the binaries in your user's documents fold
 Example in linux:
 
 ```
-source ~/Documents/djgpp/setenv
+source $HOME/Documents/djgpp/setenv
 ```
 
 And now you should have all the binaries with the prefix i586-pc-msdosdjgpp- in your path, for example: i586-pc-msdosdjgpp-gcc
@@ -38,6 +38,10 @@ MOUNT Y ~/Documents/dosbox/y
 SET PATH=%PATH%;Y:\CSDPMI7B\BIN\
 CWSDPMI.EXE
 ```
+
+## 4. Lua
+
+Put all the lua522b.zip files in $HOME/Documents/dosbox/y/lua522b/
 
 ## ???. Compile example
 
