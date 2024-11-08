@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
 #include <dos.h>
 #include <pc.h>
 
@@ -27,6 +31,21 @@ int MyGameEngine_lua_delay(lua_State *L) {
     return 0;
 }
 
+int MyGameEngine_lua_putpixel(lua_State *L) {
+    int x = lua_tonumber(L, 1);
+    int y = lua_tonumber(L, 2);
+    int color = lua_tonumber(L, 3);
+
+    putpixel(screen, x, y, color);
+
+    return 0;
+}
+
+int MyGameEngine_lua_rand(lua_State *L) {
+    lua_pushnumber(L, rand());
+    return 1;
+}
+
 int main(int argc, char const *argv[])
 {
     // Init allegro
@@ -37,6 +56,9 @@ int main(int argc, char const *argv[])
     // Init lua
     lua_State *L = luaL_newstate();
     luaL_openlibs(L);
+
+    // Init other
+    srand(time(NULL));
 
     // Adding MyGameEngine table
     lua_newtable(L);
@@ -51,6 +73,14 @@ int main(int argc, char const *argv[])
 
     lua_pushstring(L, "delay");
     lua_pushcfunction(L, MyGameEngine_lua_delay);
+    lua_settable(L, -3);
+
+    lua_pushstring(L, "putpixel");
+    lua_pushcfunction(L, MyGameEngine_lua_putpixel);
+    lua_settable(L, -3);
+
+    lua_pushstring(L, "rand");
+    lua_pushcfunction(L, MyGameEngine_lua_rand);
     lua_settable(L, -3);
 
     lua_setglobal(L, "MyGameEngine");

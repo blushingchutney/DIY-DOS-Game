@@ -1,4 +1,4 @@
-print("Hello, World!!!")
+print("Hello, World!!!\n")
 
 chirp_frequencies = {
     329.63, 329.63, 349.23, 392.00, -- E E F G
@@ -13,6 +13,24 @@ chirp_frequencies = {
 }
 for i = 1, #chirp_frequencies do
     MyGameEngine.sound(chirp_frequencies[i])
+
+    if i % 3 == 0 and i % 5 == 0 then
+        print("FizzBuzz")
+    elseif i % 3 == 0 then
+        print("Fizz")
+    elseif i % 5 == 0 then
+        print("Buzz")
+    else
+        print(i)
+    end
+    
+    for j = 1, 100 do
+        MyGameEngine.putpixel(
+            MyGameEngine.rand() % 320, -- X
+            MyGameEngine.rand() % 200, -- Y 
+            MyGameEngine.rand() % 256  -- COLOR
+        )
+    end
     MyGameEngine.delay(100)
 end
 MyGameEngine.sound(0)
