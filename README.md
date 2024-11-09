@@ -8,9 +8,9 @@ If you want to see a quick example you can go to release v0.1.0 and run the game
 
 https://github.com/blushingchutney/DIY-DOS-Game/releases/tag/v0.1.0
 
-![](ss4.png)
-![](ss3.png)
-![](ss2.png)
+![](.github/screenshots/ss4.png)
+![](.github/screenshots/ss3.png)
+![](.github/screenshots/ss2.png)
 
 ## 1. Requirements
 
@@ -34,7 +34,7 @@ And now you should have all the binaries with the prefix i586-pc-msdosdjgpp- in 
 
 ## 3. Configuring dosbox
 
-![](ss1.png)
+![](.github/screenshots/ss1.png)
 
 I recommend you place the binaries as CWSDPMI on the Y mount drive
 
